@@ -1,8 +1,8 @@
-package ch.hevs.students.exercices;
+package ch.hevs.students.david.exercices;
 
-import ch.hevs.students.lib.File;
-import ch.hevs.students.lib.Info;
-import ch.hevs.students.lib.Noeud;
+import ch.hevs.students.david.lib.File;
+import ch.hevs.students.david.lib.Info;
+import ch.hevs.students.david.lib.Noeud;
 
 public class TestExercice4 {
     public static void main(String[] args) {

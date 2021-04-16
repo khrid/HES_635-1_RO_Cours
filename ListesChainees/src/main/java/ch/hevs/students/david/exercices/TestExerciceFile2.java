@@ -1,8 +1,8 @@
-package ch.hevs.students.exercices;
+package ch.hevs.students.david.exercices;
 
-import ch.hevs.students.lib.File;
-import ch.hevs.students.lib.Info;
-import ch.hevs.students.lib.Noeud;
+import ch.hevs.students.david.lib.File;
+import ch.hevs.students.david.lib.Info;
+import ch.hevs.students.david.lib.Noeud;
 
 import java.util.Scanner;
 
@@ -28,7 +28,7 @@ public class TestExerciceFile2 {
         System.out.println("");
         System.out.println("Ex 1 Inverse contenu file");
         travail.affiche();
-        travail.inverse();
+        travail.inverseNicole();
         travail.affiche();
 
         /* Exercice 2 (cf Serie1)
@@ -93,7 +93,7 @@ public class TestExerciceFile2 {
 
         // Parcours des éléments de f2 pour les supprimer de f1
         Noeud courantFile2 = f2.getPremier();
-        while(courantFile2 != null) {
+        while (courantFile2 != null) {
             f1.rechercheEtSupprimePremier(courantFile2.getInfo().getValeur());
             courantFile2 = courantFile2.getSuivant();
         }
@@ -107,21 +107,21 @@ public class TestExerciceFile2 {
 
     public static File demandeSaisieUtilisateur(File f, boolean tri) {
         Scanner scanner = new Scanner(System.in);
-        int userInput = -1;
+        System.out.println("Entrez les valeurs (0 pour terminer) : ");
+        int userInput = scanner.nextInt();
         while (userInput != 0) {
             System.out.println();
-            System.out.print("Entrez les valeurs (0 pour terminer) : ");
-            userInput = scanner.nextInt();
-            if(userInput != 0) {
-                if (f.estVide()) {
-                    f.enfile(new Noeud(new Info(userInput)));
-                } else if (!f.contient(userInput)) {
-                    if(tri) f.radixSort();
-                    f.insereDansFileTriee(userInput);
-                }
-                System.out.print("Contenu file : ");
-                f.affiche();
+            if (f.estVide()) {
+                f.enfile(new Noeud(new Info(userInput)));
+            } else if (!f.contient(userInput)) {
+                if (tri) f.radixSort();
+                f.insereDansFileTriee(userInput);
             }
+            System.out.print("Contenu file : ");
+            f.affiche();
+
+            System.out.println("Entrez les valeurs (0 pour terminer) : ");
+            userInput = scanner.nextInt();
         }
         return f;
     }
