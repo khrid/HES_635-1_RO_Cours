@@ -18,7 +18,7 @@ public class ExplorationGraphe {
 
         Graphe g = new Graphe(matrice);
         g.afficheListe();
-        //g.explorationRecursive(0);
+        g.explorationRecursive(0);
         g.explorationFile(0);
         g.affichePredecesseurs();
         File f1 = g.chemin(0, 7);

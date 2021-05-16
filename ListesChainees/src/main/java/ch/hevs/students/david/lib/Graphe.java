@@ -53,7 +53,7 @@ public class Graphe {
         _explorationRecursive(sommet, sommetsVisites);
     }
 
-    public void _explorationRecursive(int sommet, boolean[] sommetsVisites) {
+    private void _explorationRecursive(int sommet, boolean[] sommetsVisites) {
         // clause de finitude
         if(sommetsVisites[sommet])
             return;
